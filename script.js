@@ -1,14 +1,10 @@
-//Menù Hamburger 
-document.addEventListener("DOMContentLoaded", function() {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const menu = document.querySelector(".menu");
-    const menuClose = document.querySelector(".menu-close");
+const menuToggle = document.querySelector('.menu-toggle');
+const menuMobile = document.querySelector('.menu-mobile');
 
-    menuToggle.addEventListener("click", function() {
-        menu.classList.add("active");
-    });
-
-    menuClose.addEventListener("click", function() {
-        menu.classList.remove("active");
-    });
+menuToggle.addEventListener('click', () => {
+  if (menuMobile.style.maxHeight && menuMobile.style.maxHeight !== "0px") {
+    menuMobile.style.maxHeight = "0px";
+  } else {
+    menuMobile.style.maxHeight = menuMobile.scrollHeight + "px";
+  }
 });
